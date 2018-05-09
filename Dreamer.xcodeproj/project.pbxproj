@@ -17,6 +17,7 @@
 		765A459D20A39FBD0082FB7A /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A459C20A39FBD0082FB7A /* Weekday.swift */; };
 		765A459F20A39FCB0082FB7A /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A459E20A39FCB0082FB7A /* Month.swift */; };
 		765A45A120A39FFA0082FB7A /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45A020A39FFA0082FB7A /* Year.swift */; };
+		765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45B620A3BD3B0082FB7A /* Date+Format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		765A459C20A39FBD0082FB7A /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		765A459E20A39FCB0082FB7A /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		765A45A020A39FFA0082FB7A /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
+		765A45B620A3BD3B0082FB7A /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +122,7 @@
 		765A459820A399620082FB7A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				765A459920A3997A0082FB7A /* Date+Components.swift */,
+				765A45B820A3BD440082FB7A /* Date */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +133,15 @@
 				765A459C20A39FBD0082FB7A /* Weekday.swift */,
 				765A459E20A39FCB0082FB7A /* Month.swift */,
 				765A45A020A39FFA0082FB7A /* Year.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		765A45B820A3BD440082FB7A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				765A459920A3997A0082FB7A /* Date+Components.swift */,
+				765A45B620A3BD3B0082FB7A /* Date+Format.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */,
 				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
 				765A459F20A39FCB0082FB7A /* Month.swift in Sources */,
