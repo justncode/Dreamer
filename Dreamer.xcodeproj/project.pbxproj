@@ -13,6 +13,7 @@
 		765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458820A38EC60082FB7A /* CustomTabBarController.swift */; };
 		765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458A20A38F290082FB7A /* CalendarsController.swift */; };
 		765A458D20A390250082FB7A /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458C20A390250082FB7A /* EntriesController.swift */; };
+		765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A459920A3997A0082FB7A /* Date+Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		765A458820A38EC60082FB7A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		765A458A20A38F290082FB7A /* CalendarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsController.swift; sourceTree = "<group>"; };
 		765A458C20A390250082FB7A /* EntriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesController.swift; sourceTree = "<group>"; };
+		765A459920A3997A0082FB7A /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		765A459120A391170082FB7A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				765A459820A399620082FB7A /* Extensions */,
 				765A457620A38E2D0082FB7A /* AppDelegate.swift */,
 				765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */,
 				765A458220A38E2E0082FB7A /* Info.plist */,
@@ -105,6 +108,14 @@
 				765A457D20A38E2D0082FB7A /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		765A459820A399620082FB7A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				765A459920A3997A0082FB7A /* Date+Components.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
 				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
