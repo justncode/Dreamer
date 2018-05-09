@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457620A38E2D0082FB7A /* AppDelegate.swift */; };
-		765A457920A38E2D0082FB7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457820A38E2D0082FB7A /* ViewController.swift */; };
-		765A457C20A38E2D0082FB7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457A20A38E2D0082FB7A /* Main.storyboard */; };
 		765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A457D20A38E2D0082FB7A /* Assets.xcassets */; };
 		765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */; };
+		765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458820A38EC60082FB7A /* CustomTabBarController.swift */; };
+		765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458A20A38F290082FB7A /* CalendarsController.swift */; };
+		765A458D20A390250082FB7A /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A458C20A390250082FB7A /* EntriesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		765A457320A38E2D0082FB7A /* Dreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A457620A38E2D0082FB7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		765A457820A38E2D0082FB7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		765A457B20A38E2D0082FB7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		765A457D20A38E2D0082FB7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		765A458020A38E2D0082FB7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		765A458220A38E2E0082FB7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765A458820A38EC60082FB7A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		765A458A20A38F290082FB7A /* CalendarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsController.swift; sourceTree = "<group>"; };
+		765A458C20A390250082FB7A /* EntriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,55 @@
 		765A457520A38E2D0082FB7A /* Dreamer */ = {
 			isa = PBXGroup;
 			children = (
-				765A457620A38E2D0082FB7A /* AppDelegate.swift */,
-				765A457820A38E2D0082FB7A /* ViewController.swift */,
-				765A457A20A38E2D0082FB7A /* Main.storyboard */,
-				765A457D20A38E2D0082FB7A /* Assets.xcassets */,
-				765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */,
-				765A458220A38E2E0082FB7A /* Info.plist */,
+				765A459120A391170082FB7A /* Main */,
+				765A459020A391000082FB7A /* TabBar */,
+				765A458F20A390F80082FB7A /* List */,
+				765A458E20A390EF0082FB7A /* Calendar */,
 			);
 			path = Dreamer;
+			sourceTree = "<group>";
+		};
+		765A458E20A390EF0082FB7A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				765A458A20A38F290082FB7A /* CalendarsController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		765A458F20A390F80082FB7A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				765A458C20A390250082FB7A /* EntriesController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		765A459020A391000082FB7A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				765A458820A38EC60082FB7A /* CustomTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		765A459120A391170082FB7A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				765A457620A38E2D0082FB7A /* AppDelegate.swift */,
+				765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */,
+				765A458220A38E2E0082FB7A /* Info.plist */,
+				765A459220A391370082FB7A /* Resources */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		765A459220A391370082FB7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				765A457D20A38E2D0082FB7A /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +168,6 @@
 			files = (
 				765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */,
 				765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */,
-				765A457C20A38E2D0082FB7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				765A457920A38E2D0082FB7A /* ViewController.swift in Sources */,
+				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
+				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
+				765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		765A457A20A38E2D0082FB7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				765A457B20A38E2D0082FB7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3G7JW8J942;
-				INFOPLIST_FILE = Dreamer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Dreamer/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justncode.Dreamer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3G7JW8J942;
-				INFOPLIST_FILE = Dreamer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Dreamer/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justncode.Dreamer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
