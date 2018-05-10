@@ -19,6 +19,8 @@
 		765A45A120A39FFA0082FB7A /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45A020A39FFA0082FB7A /* Year.swift */; };
 		765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45B620A3BD3B0082FB7A /* Date+Format.swift */; };
 		765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45BA20A3BD990082FB7A /* UIView+Anchors.swift */; };
+		765A45BF20A3BE030082FB7A /* DreamerModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 765A45BD20A3BE030082FB7A /* DreamerModels.xcdatamodeld */; };
+		765A45C120A3BE880082FB7A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A45C020A3BE880082FB7A /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		765A45A020A39FFA0082FB7A /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		765A45B620A3BD3B0082FB7A /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		765A45BA20A3BD990082FB7A /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		765A45BE20A3BE030082FB7A /* DreamerModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamerModels.xcdatamodel; sourceTree = "<group>"; };
+		765A45C020A3BE880082FB7A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		765A457520A38E2D0082FB7A /* Dreamer */ = {
 			isa = PBXGroup;
 			children = (
+				765A45BC20A3BDDC0082FB7A /* CoreData */,
 				765A459120A391170082FB7A /* Main */,
 				765A459020A391000082FB7A /* TabBar */,
 				765A458F20A390F80082FB7A /* List */,
@@ -157,6 +162,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		765A45BC20A3BDDC0082FB7A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				765A45BD20A3BE030082FB7A /* DreamerModels.xcdatamodeld */,
+				765A45C020A3BE880082FB7A /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +247,8 @@
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
 				765A459F20A39FCB0082FB7A /* Month.swift in Sources */,
 				765A459D20A39FBD0082FB7A /* Weekday.swift in Sources */,
+				765A45BF20A3BE030082FB7A /* DreamerModels.xcdatamodeld in Sources */,
+				765A45C120A3BE880082FB7A /* CoreDataManager.swift in Sources */,
 				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
 				765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */,
@@ -414,6 +430,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		765A45BD20A3BE030082FB7A /* DreamerModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				765A45BE20A3BE030082FB7A /* DreamerModels.xcdatamodel */,
+			);
+			currentVersion = 765A45BE20A3BE030082FB7A /* DreamerModels.xcdatamodel */;
+			path = DreamerModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 765A456B20A38E2D0082FB7A /* Project object */;
 }
