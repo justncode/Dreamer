@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2BC20A5183D00282E6E /* EntryStore.swift */; };
+		7633C2BF20A518E400282E6E /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2BE20A518E400282E6E /* Notification+Names.swift */; };
 		765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457620A38E2D0082FB7A /* AppDelegate.swift */; };
 		765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A457D20A38E2D0082FB7A /* Assets.xcassets */; };
 		765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7633C2BC20A5183D00282E6E /* EntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStore.swift; sourceTree = "<group>"; };
+		7633C2BE20A518E400282E6E /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
 		765A457320A38E2D0082FB7A /* Dreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A457620A38E2D0082FB7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A457D20A38E2D0082FB7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7633C2C020A518EF00282E6E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2BE20A518E400282E6E /* Notification+Names.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		765A456A20A38E2D0082FB7A = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 			children = (
 				765A459B20A39FAE0082FB7A /* Date */,
 				765A458A20A38F290082FB7A /* CalendarsController.swift */,
+				7633C2BC20A5183D00282E6E /* EntryStore.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -109,6 +122,7 @@
 		765A459120A391170082FB7A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7633C2C020A518EF00282E6E /* Constants */,
 				765A459820A399620082FB7A /* Extensions */,
 				765A457620A38E2D0082FB7A /* AppDelegate.swift */,
 				765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */,
@@ -245,12 +259,14 @@
 				765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */,
 				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
+				7633C2BF20A518E400282E6E /* Notification+Names.swift in Sources */,
 				765A459F20A39FCB0082FB7A /* Month.swift in Sources */,
 				765A459D20A39FBD0082FB7A /* Weekday.swift in Sources */,
 				765A45BF20A3BE030082FB7A /* DreamerModels.xcdatamodeld in Sources */,
 				765A45C120A3BE880082FB7A /* CoreDataManager.swift in Sources */,
 				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
+				7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */,
 				765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */,
 				765A45A120A39FFA0082FB7A /* Year.swift in Sources */,
 				765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */,

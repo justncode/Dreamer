@@ -36,7 +36,7 @@ struct Month {
     
     var current: Month.Name = .jan
     var year: Int = 2018
-    lazy var days = [Int?]()
+    lazy var days = [Entry?]()
     
     init(_ current: Month.Name, year: Int) {
         self.current = current
