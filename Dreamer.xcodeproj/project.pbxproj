@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2BC20A5183D00282E6E /* EntryStore.swift */; };
 		7633C2BF20A518E400282E6E /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2BE20A518E400282E6E /* Notification+Names.swift */; };
+		7633C2C420A51A6000282E6E /* CalendarCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2C320A51A6000282E6E /* CalendarCells.swift */; };
+		7633C2C820A51ABF00282E6E /* UILabel+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2C720A51ABF00282E6E /* UILabel+Initialization.swift */; };
+		7633C2CB20A51B2400282E6E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2CA20A51B2400282E6E /* CalendarView.swift */; };
+		7633C2CD20A51B5E00282E6E /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2CC20A51B5E00282E6E /* DayCell.swift */; };
+		7633C2CF20A51B8000282E6E /* UIView+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2CE20A51B8000282E6E /* UIView+Initialization.swift */; };
+		7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2D020A51B9D00282E6E /* UIView+Style.swift */; };
 		765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457620A38E2D0082FB7A /* AppDelegate.swift */; };
 		765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A457D20A38E2D0082FB7A /* Assets.xcassets */; };
 		765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */; };
@@ -28,6 +34,12 @@
 /* Begin PBXFileReference section */
 		7633C2BC20A5183D00282E6E /* EntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStore.swift; sourceTree = "<group>"; };
 		7633C2BE20A518E400282E6E /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
+		7633C2C320A51A6000282E6E /* CalendarCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCells.swift; sourceTree = "<group>"; };
+		7633C2C720A51ABF00282E6E /* UILabel+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Initialization.swift"; sourceTree = "<group>"; };
+		7633C2CA20A51B2400282E6E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		7633C2CC20A51B5E00282E6E /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		7633C2CE20A51B8000282E6E /* UIView+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Initialization.swift"; sourceTree = "<group>"; };
+		7633C2D020A51B9D00282E6E /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
 		765A457320A38E2D0082FB7A /* Dreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A457620A38E2D0082FB7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A457D20A38E2D0082FB7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +77,32 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		7633C2C220A51A5400282E6E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2C320A51A6000282E6E /* CalendarCells.swift */,
+				7633C2CC20A51B5E00282E6E /* DayCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7633C2C620A51AAA00282E6E /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2C720A51ABF00282E6E /* UILabel+Initialization.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		7633C2C920A51AEC00282E6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2C220A51A5400282E6E /* Cells */,
+				7633C2CA20A51B2400282E6E /* CalendarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		765A456A20A38E2D0082FB7A = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +134,7 @@
 		765A458E20A390EF0082FB7A /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				7633C2C920A51AEC00282E6E /* Views */,
 				765A459B20A39FAE0082FB7A /* Date */,
 				765A458A20A38F290082FB7A /* CalendarsController.swift */,
 				7633C2BC20A5183D00282E6E /* EntryStore.swift */,
@@ -124,10 +163,10 @@
 			children = (
 				7633C2C020A518EF00282E6E /* Constants */,
 				765A459820A399620082FB7A /* Extensions */,
+				765A459220A391370082FB7A /* Resources */,
 				765A457620A38E2D0082FB7A /* AppDelegate.swift */,
 				765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */,
 				765A458220A38E2E0082FB7A /* Info.plist */,
-				765A459220A391370082FB7A /* Resources */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -171,7 +210,10 @@
 		765A45B920A3BD8A0082FB7A /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				7633C2C620A51AAA00282E6E /* UILabel */,
 				765A45BA20A3BD990082FB7A /* UIView+Anchors.swift */,
+				7633C2CE20A51B8000282E6E /* UIView+Initialization.swift */,
+				7633C2D020A51B9D00282E6E /* UIView+Style.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -259,14 +301,20 @@
 				765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */,
 				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
+				7633C2CB20A51B2400282E6E /* CalendarView.swift in Sources */,
 				7633C2BF20A518E400282E6E /* Notification+Names.swift in Sources */,
 				765A459F20A39FCB0082FB7A /* Month.swift in Sources */,
 				765A459D20A39FBD0082FB7A /* Weekday.swift in Sources */,
 				765A45BF20A3BE030082FB7A /* DreamerModels.xcdatamodeld in Sources */,
 				765A45C120A3BE880082FB7A /* CoreDataManager.swift in Sources */,
+				7633C2C820A51ABF00282E6E /* UILabel+Initialization.swift in Sources */,
+				7633C2CD20A51B5E00282E6E /* DayCell.swift in Sources */,
 				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
+				7633C2CF20A51B8000282E6E /* UIView+Initialization.swift in Sources */,
+				7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */,
 				7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */,
+				7633C2C420A51A6000282E6E /* CalendarCells.swift in Sources */,
 				765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */,
 				765A45A120A39FFA0082FB7A /* Year.swift in Sources */,
 				765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */,
