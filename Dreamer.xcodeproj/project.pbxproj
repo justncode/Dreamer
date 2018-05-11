@@ -15,6 +15,7 @@
 		7633C2CD20A51B5E00282E6E /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2CC20A51B5E00282E6E /* DayCell.swift */; };
 		7633C2CF20A51B8000282E6E /* UIView+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2CE20A51B8000282E6E /* UIView+Initialization.swift */; };
 		7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2D020A51B9D00282E6E /* UIView+Style.swift */; };
+		7633C2D420A51D1F00282E6E /* NavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C2D320A51D1F00282E6E /* NavigationAnimator.swift */; };
 		765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457620A38E2D0082FB7A /* AppDelegate.swift */; };
 		765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A457D20A38E2D0082FB7A /* Assets.xcassets */; };
 		765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 		7633C2CC20A51B5E00282E6E /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		7633C2CE20A51B8000282E6E /* UIView+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Initialization.swift"; sourceTree = "<group>"; };
 		7633C2D020A51B9D00282E6E /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		7633C2D320A51D1F00282E6E /* NavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAnimator.swift; sourceTree = "<group>"; };
 		765A457320A38E2D0082FB7A /* Dreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A457620A38E2D0082FB7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A457D20A38E2D0082FB7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7633C2D220A51D0500282E6E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2D320A51D1F00282E6E /* NavigationAnimator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		765A456A20A38E2D0082FB7A = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		765A459120A391170082FB7A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7633C2D220A51D0500282E6E /* Navigation */,
 				7633C2C020A518EF00282E6E /* Constants */,
 				765A459820A399620082FB7A /* Extensions */,
 				765A459220A391370082FB7A /* Resources */,
@@ -315,6 +326,7 @@
 				7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */,
 				7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */,
 				7633C2C420A51A6000282E6E /* CalendarCells.swift in Sources */,
+				7633C2D420A51D1F00282E6E /* NavigationAnimator.swift in Sources */,
 				765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */,
 				765A45A120A39FFA0082FB7A /* Year.swift in Sources */,
 				765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */,
