@@ -10,6 +10,8 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
     
+    let entryStore = EntryStore()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class CustomTabBarController: UITabBarController {
     
     private func setupTabBarViews() {
         let calendarsController = CalendarsController()
+        calendarsController.entryStore = entryStore
         let calendarsNavController = UINavigationController(rootViewController: calendarsController)
         calendarsNavController.tabBarItem.image = #imageLiteral(resourceName: "history")
         
