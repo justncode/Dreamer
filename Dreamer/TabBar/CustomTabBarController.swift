@@ -22,6 +22,7 @@ class CustomTabBarController: UITabBarController {
     // MARK: - Interface Setup
     private func setupViews() {
         setupTabBar()
+        addBackgroundView()
     }
     
     private func setupTabBarViews() {
@@ -47,4 +48,17 @@ class CustomTabBarController: UITabBarController {
         
         setupTabBarViews()
     }
+    
+    private func addBackgroundView() {
+        view.addSubview(backgroundView)
+        backgroundView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+        view.sendSubview(toBack: backgroundView)
+    }
+    
+    let backgroundView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "background"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 }
