@@ -31,6 +31,7 @@ class CustomTabBarController: UITabBarController {
         calendarsNavController.tabBarItem.image = #imageLiteral(resourceName: "history")
         
         let entriesController = EntriesController()
+        entriesController.entryStore = entryStore
         let entriesNavController = UINavigationController(rootViewController: entriesController)
         entriesNavController.tabBarItem.image = #imageLiteral(resourceName: "entries")
         
