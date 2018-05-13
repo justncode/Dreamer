@@ -118,10 +118,10 @@
 		7633C2C920A51AEC00282E6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7633C32B20A8D3FA00282E6E /* Style */,
 				7633C2C220A51A5400282E6E /* Cells */,
 				7633C2CA20A51B2400282E6E /* CalendarView.swift */,
 				7633C2D620A5205A00282E6E /* WeekdayView.swift */,
-				7633C2D820A5207D00282E6E /* SeparatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,8 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				7633C2DB20A5210900282E6E /* Gradient.swift */,
-				7633C31F20A62E8300282E6E /* DateView.swift */,
-				7633C32120A62E9400282E6E /* DotView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -158,6 +156,34 @@
 				7633C32620A8CCA700282E6E /* UIViewController+Keyboard.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		7633C32B20A8D3FA00282E6E /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2D820A5207D00282E6E /* SeparatorView.swift */,
+				7633C31F20A62E8300282E6E /* DateView.swift */,
+				7633C32120A62E9400282E6E /* DotView.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		7633C32C20A8D46600282E6E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				765A458A20A38F290082FB7A /* CalendarsController.swift */,
+				7633C32420A8C93600282E6E /* EntryController.swift */,
+				765A458C20A390250082FB7A /* EntriesController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7633C32D20A8D47500282E6E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7633C2BC20A5183D00282E6E /* EntryStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		765A456A20A38E2D0082FB7A = {
@@ -182,7 +208,6 @@
 				765A459120A391170082FB7A /* Main */,
 				765A45BC20A3BDDC0082FB7A /* CoreData */,
 				765A459020A391000082FB7A /* TabBar */,
-				765A458F20A390F80082FB7A /* List */,
 				765A458E20A390EF0082FB7A /* Calendar */,
 			);
 			path = Dreamer;
@@ -191,21 +216,12 @@
 		765A458E20A390EF0082FB7A /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				7633C32D20A8D47500282E6E /* Store */,
+				7633C32C20A8D46600282E6E /* Controllers */,
 				7633C2C920A51AEC00282E6E /* Views */,
 				765A459B20A39FAE0082FB7A /* Date */,
-				765A458A20A38F290082FB7A /* CalendarsController.swift */,
-				7633C2BC20A5183D00282E6E /* EntryStore.swift */,
-				7633C32420A8C93600282E6E /* EntryController.swift */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		765A458F20A390F80082FB7A /* List */ = {
-			isa = PBXGroup;
-			children = (
-				765A458C20A390250082FB7A /* EntriesController.swift */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		765A459020A391000082FB7A /* TabBar */ = {
