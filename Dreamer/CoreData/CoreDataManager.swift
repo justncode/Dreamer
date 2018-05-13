@@ -8,13 +8,11 @@
 
 import CoreData
 
-import CoreData
-
 struct CoreDataManager {
     static let shared = CoreDataManager()
     
     let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "LucidModels")
+        let container = NSPersistentContainer(name: "DreamerModels")
         container.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error {
                 fatalError("Failed loading persistent stores: \(error)")

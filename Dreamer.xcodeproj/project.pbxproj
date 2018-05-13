@@ -22,6 +22,8 @@
 		7633C31D20A62D7800282E6E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C31C20A62D7800282E6E /* Alert.swift */; };
 		7633C32020A62E8300282E6E /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C31F20A62E8300282E6E /* DateView.swift */; };
 		7633C32220A62E9400282E6E /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C32120A62E9400282E6E /* DotView.swift */; };
+		7633C32520A8C93600282E6E /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C32420A8C93600282E6E /* EntryController.swift */; };
+		7633C32720A8CCA700282E6E /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633C32620A8CCA700282E6E /* UIViewController+Keyboard.swift */; };
 		765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A457620A38E2D0082FB7A /* AppDelegate.swift */; };
 		765A457E20A38E2D0082FB7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A457D20A38E2D0082FB7A /* Assets.xcassets */; };
 		765A458120A38E2D0082FB7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765A457F20A38E2D0082FB7A /* LaunchScreen.storyboard */; };
@@ -54,6 +56,8 @@
 		7633C31C20A62D7800282E6E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7633C31F20A62E8300282E6E /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		7633C32120A62E9400282E6E /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		7633C32420A8C93600282E6E /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		7633C32620A8CCA700282E6E /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		765A457320A38E2D0082FB7A /* Dreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A457620A38E2D0082FB7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A457D20A38E2D0082FB7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +149,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7633C32820A8CCA900282E6E /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7633C32620A8CCA700282E6E /* UIViewController+Keyboard.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		765A456A20A38E2D0082FB7A = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +192,7 @@
 				765A459B20A39FAE0082FB7A /* Date */,
 				765A458A20A38F290082FB7A /* CalendarsController.swift */,
 				7633C2BC20A5183D00282E6E /* EntryStore.swift */,
+				7633C32420A8C93600282E6E /* EntryController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 		765A459820A399620082FB7A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7633C32820A8CCA900282E6E /* UIViewController */,
 				765A45B920A3BD8A0082FB7A /* UIView */,
 				765A45B820A3BD440082FB7A /* Date */,
 			);
@@ -345,6 +359,7 @@
 			files = (
 				7633C2D920A5207D00282E6E /* SeparatorView.swift in Sources */,
 				765A45B720A3BD3B0082FB7A /* Date+Format.swift in Sources */,
+				7633C32520A8C93600282E6E /* EntryController.swift in Sources */,
 				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				7633C31D20A62D7800282E6E /* Alert.swift in Sources */,
 				765A458D20A390250082FB7A /* EntriesController.swift in Sources */,
@@ -360,6 +375,7 @@
 				7633C2CD20A51B5E00282E6E /* DayCell.swift in Sources */,
 				7633C32020A62E8300282E6E /* DateView.swift in Sources */,
 				765A458920A38EC60082FB7A /* CustomTabBarController.swift in Sources */,
+				7633C32720A8CCA700282E6E /* UIViewController+Keyboard.swift in Sources */,
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
 				7633C2CF20A51B8000282E6E /* UIView+Initialization.swift in Sources */,
 				7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */,

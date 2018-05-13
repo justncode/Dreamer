@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 class CalendarsController: UIViewController {
     var entryStore: EntryStore!
     
@@ -38,12 +36,27 @@ class CalendarsController: UIViewController {
         }
     }
     
+    private func showEntry(for day: Int, month: Int, year: Int) {
+        let entryController = EntryController()
+        
+        entryController.entryStore = entryStore
+        entryController.entry = entryStore.entry(for: (day: day, month: month, year: year))
+        entryController.date = (day, month, year)
+        
+        navigationController?.pushViewController(entryController, animated: true)
+    }
+    
     @objc private func reloadEntries(notification: NSNotification) {
         tableView.reloadData()
     }
     
     private func setupNotificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEntries), name: .entriesUpdated, object: nil)
+    }
+    
+    @objc private func showDailyEntry() {
+        let today = Date()
+        showEntry(for: today.day-1, month: today.month, year: today.year)
     }
     
     // MARK: - Interface Setup
@@ -68,6 +81,7 @@ class CalendarsController: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Dreamer"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showDailyEntry))
     }
     
     private func setupTableView() {
@@ -130,6 +144,9 @@ extension CalendarsController: UITableViewDataSource {
         
         cell.calendarView.entryStore = entryStore
         cell.month = indexPath.row
+        cell.dateSelected = { [weak self] (day, month, year) in
+            self?.showEntry(for: day, month: month, year: year)
+        }
         return cell
     }
 }
