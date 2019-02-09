@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class EntryController: UIViewController {
     var entryStore: EntryStore!
@@ -65,6 +66,10 @@ class EntryController: UIViewController {
             entryStore.add(entry)
         }
         navigationController?.popViewController(animated: true)
+        
+        if CoreDataManager.shared.fetchEntries().count % 5 == 0 {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     private func saveEntry() {
@@ -201,6 +206,7 @@ class EntryController: UIViewController {
         textView.showsVerticalScrollIndicator = false
         textView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         textView.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.5)
+        textView.keyboardAppearance = .dark
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()

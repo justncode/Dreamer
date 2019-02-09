@@ -123,6 +123,7 @@ class EntriesController: UIViewController {
         sb.barStyle = .blackOpaque
         sb.placeholder = "Search your dreams..."
         sb.delegate = self
+        sb.keyboardAppearance = .dark
         return sb
     }()
 }
@@ -142,6 +143,10 @@ extension EntriesController: UISearchBarDelegate {
         }
         
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
     }
 }
 
