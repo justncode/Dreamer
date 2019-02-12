@@ -52,7 +52,7 @@ class CustomTabBarController: UITabBarController {
     private func addBackgroundView() {
         view.addSubview(backgroundView)
         backgroundView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
-        view.sendSubview(toBack: backgroundView)
+        view.sendSubviewToBack(backgroundView)
     }
     
     let backgroundView: UIImageView = {

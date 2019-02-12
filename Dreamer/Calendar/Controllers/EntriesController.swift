@@ -186,7 +186,7 @@ extension EntriesController: UITableViewDelegate {
 
 // MARK: - UINavigationControllerDelegate
 extension EntriesController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return NavigationAnimator(operation)
     }
 }

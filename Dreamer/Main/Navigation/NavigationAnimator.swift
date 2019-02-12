@@ -10,9 +10,9 @@ import UIKit
 
 class NavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var duration: TimeInterval
-    var operation: UINavigationControllerOperation
+    var operation: UINavigationController.Operation
     
-    init(_ operation: UINavigationControllerOperation = .push, _ duration: TimeInterval = 0.5) {
+    init(_ operation: UINavigationController.Operation = .push, _ duration: TimeInterval = 0.5) {
         self.duration = duration
         self.operation = operation
     }

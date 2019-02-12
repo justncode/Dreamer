@@ -88,8 +88,8 @@ class EntryController: UIViewController {
     }
     
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setSaveButtonState() {
@@ -120,7 +120,7 @@ class EntryController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
+        guard let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
         bodyBottomConstraint?.constant = -keyboardSize.cgRectValue.height
         
@@ -172,7 +172,7 @@ class EntryController: UIViewController {
         bodyView.anchor(top: bodyContainerView.topAnchor, leading: bodyContainerView.leadingAnchor, trailing: bodyContainerView.trailingAnchor)
         
         bodyView.addSubview(placeholderLabel)
-        view.sendSubview(toBack: bodyContainerView)
+        view.sendSubviewToBack(bodyContainerView)
     }
     
     let dateView = DateView()
@@ -190,7 +190,7 @@ class EntryController: UIViewController {
     let titleField: UITextField = {
         let textField = UITextField()
         textField.font = UIFont.boldSystemFont(ofSize: 22)
-        textField.attributedPlaceholder = NSAttributedString(string: "Dream Title", attributes: [NSAttributedStringKey.foregroundColor:#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.25)])
+        textField.attributedPlaceholder = NSAttributedString(string: "Dream Title", attributes: [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.25)])
         textField.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.75)
         textField.backgroundColor = .clear
         textField.textAlignment = .center

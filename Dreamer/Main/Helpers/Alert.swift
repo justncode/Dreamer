@@ -9,7 +9,7 @@
 import UIKit
 
 struct Alert {
-    static func controller(title: String, message: String, style: UIAlertControllerStyle, actions: [UIAlertAction]) -> UIAlertController {
+    static func controller(title: String, message: String, style: UIAlertController.Style, actions: [UIAlertAction]) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         _ = actions.map { action in
             alertController.addAction(action)

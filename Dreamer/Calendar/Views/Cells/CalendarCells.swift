@@ -25,14 +25,14 @@ class CalendarCell: UITableViewCell {
             let name = String(Month.Name.of(date.month))
             let year = String(date.year)
             
-            mutableString = NSMutableAttributedString(string: "\(name) \(year)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20)])
-            mutableString.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 14.5), range: NSRange(location: name.count + 1, length: year.count))
+            mutableString = NSMutableAttributedString(string: "\(name) \(year)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)])
+            mutableString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14.5), range: NSRange(location: name.count + 1, length: year.count))
             
             monthLabel.attributedText = mutableString //"\(Month.name(of: date.month)), \(date.year)"
         }
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupViews()

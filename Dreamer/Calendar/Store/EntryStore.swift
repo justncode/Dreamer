@@ -26,8 +26,6 @@ class EntryStore {
     }
     
     func entry(for date: (day: Int, month: Int, year: Int)) -> Entry? {
-        guard date.day < years[Date().year-date.year].months[Int(date.month)].days.count else { return nil }
-        
         return years[Date().year-date.year].months[Int(date.month)].days[Int(date.day)]
     }
     
