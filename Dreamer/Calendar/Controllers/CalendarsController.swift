@@ -11,6 +11,7 @@ import UIKit
 class CalendarsController: UIViewController {
     var entryStore: EntryStore!
     
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class CalendarsController: UIViewController {
         
         Gradient.updateFrame(to: view.bounds)
         tableView.reloadData()
+    }
+    
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadEntries), name: .entriesUpdated, object: nil)
     }
     
     // MARK: - Entry Data
@@ -50,13 +55,22 @@ class CalendarsController: UIViewController {
         tableView.reloadData()
     }
     
-    private func setupNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadEntries), name: .entriesUpdated, object: nil)
-    }
     
-    @objc private func showDailyEntry() {
-        let today = Date()
-        showEntry(for: today.day-1, month: today.month, year: today.year)
+    @IBAction private func presentGearsMenu() {
+        let vc = GearsMenuViewController(with: [
+            CalenderGearsGroupItem(title: "Update todays journal", icon: UIImage(systemName: "calendar.badge.clock")!),
+            CalenderGearsGroupItem(title: "Update Past/Future", icon: UIImage(systemName: "calendar.day.timeline.leading")!),
+            CalenderGearsGroupItem(title: "Organize Dots on Calender", icon: UIImage(systemName: "mappin")!)
+        ])
+        vc.showEntry = { [weak self] (day, month, year) in
+            guard let self = self else {return}
+            self.showEntry(for: day, month: month, year: year)
+        }
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true,completion: nil)
+
     }
     
     // MARK: - Interface Setup
@@ -80,8 +94,10 @@ class CalendarsController: UIViewController {
     }
     
     private func setupNavigationBar() {
+        /* TODO: determine better icon
+         */
         navigationItem.title = "Dreamer"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showDailyEntry))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentGearsMenu))
     }
     
     private func setupTableView() {
@@ -148,5 +164,16 @@ extension CalendarsController: UITableViewDataSource {
             self?.showEntry(for: day, month: month, year: year)
         }
         return cell
+    }
+}
+
+extension CalendarsController: UIPopoverPresentationControllerDelegate {
+    
+}
+
+
+extension CalendarsController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        JNCPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

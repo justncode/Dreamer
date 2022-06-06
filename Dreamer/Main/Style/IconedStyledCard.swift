@@ -1,30 +1,34 @@
 //
-//  EntryCell.swift
+//  IconedStyledCard.swift
 //  Dreamer
 //
-//  Created by Justin Rose on 5/13/18.
+//  Created by Conner Maddalozzo on 6/5/22.
 //  Copyright © 2018 justncode LLC. All rights reserved.
 //
 
 import UIKit
 
-class EntryCell: UITableViewCell {
+class IconedStyledCard: UITableViewCell {
     
-    var entry: Entry? {
+    public var entry: NavigationCellDatasource? {
+        willSet {
+            guard let newValue = newValue else {return}
+            titleLabel.text = newValue.title
+            bodyLabel.text = newValue.body
+            icon.image = newValue.img
+        }
+    }
+    public var datePickerOverride: Bool = false {
         didSet {
-            titleLabel.text = entry?.title
-            bodyLabel.text = entry?.body
-            
-            if let date = entry?.date {
-                dayLabel.text = String(date.day + 1)
-                monthLabel.text = String(Month.Name.of(Int(date.month)).prefix(3).uppercased())
-            }
+            bodyLabel.isHidden = datePickerOverride
+            datePicker.isHidden = !datePickerOverride
         }
     }
     
+    public var dateHandler: ((Date)->Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupViews()
     }
     
@@ -36,6 +40,10 @@ class EntryCell: UITableViewCell {
         super.layoutSubviews()
         
         containerView.round(cornerRadius: 10)
+    }
+    
+    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+        dateHandler?(sender.date)
     }
     
     // MARK: - Interface Setup
@@ -52,14 +60,16 @@ class EntryCell: UITableViewCell {
         leftContainerView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor)
         leftContainerView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
         
-        dateView.addSubview(dayLabel)
-        dayLabel.centerWithConstant(y: -8)
-        
-        dateView.addSubview(monthLabel)
-        monthLabel.centerX(to: dayLabel.centerXAnchor)
-        monthLabel.anchor(top: dayLabel.bottomAnchor)
+        icon.JNCStyled()
+        dateView.addArrangedSubview(icon)
         
         leftContainerView.addSubview(dateView)
+        NSLayoutConstraint.activate([
+            dateView.topAnchor.constraint(equalTo: leftContainerView.topAnchor, constant: 15),
+            dateView.bottomAnchor.constraint(equalTo: leftContainerView.bottomAnchor, constant: -15),
+            dateView.trailingAnchor.constraint(equalTo: leftContainerView.trailingAnchor, constant: -15),
+            dateView.leadingAnchor.constraint(equalTo: leftContainerView.leadingAnchor, constant: 15)
+            ])
         dateView.anchor(top: leftContainerView.topAnchor, leading: leftContainerView.leadingAnchor, bottom: leftContainerView.bottomAnchor, trailing: leftContainerView.trailingAnchor)
         
         containerView.addSubview(rightContainerView)
@@ -72,9 +82,15 @@ class EntryCell: UITableViewCell {
                           trailing: (anchor: rightContainerView.trailingAnchor, constant: -16))
         
         rightContainerView.addSubview(bodyLabel)
+        rightContainerView.addSubview(datePicker)
         bodyLabel.anchor(leading: titleLabel.leadingAnchor, trailing: titleLabel.trailingAnchor)
         bodyLabel.anchor(top: (anchor: titleLabel.centerYAnchor, constant: 12), bottom: (anchor: rightContainerView.bottomAnchor, constant: -8))
         
+        
+        datePicker.anchor(leading: titleLabel.leadingAnchor, trailing: titleLabel.trailingAnchor)
+        datePicker.anchor(top: (anchor: titleLabel.centerYAnchor, constant: 12), bottom: (anchor: rightContainerView.bottomAnchor, constant: -8))
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .editingDidEnd)
+        datePicker.isHidden = true
         titleLabel.addSubview(quoteLabel)
         quoteLabel.anchor(top: titleLabel.topAnchor, leading: titleLabel.leadingAnchor, bottom: titleLabel.centerYAnchor, trailing: titleLabel.trailingAnchor)
     }
@@ -84,15 +100,43 @@ class EntryCell: UITableViewCell {
         backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
     }
     
+    private func createDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let donebttn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        dateTextField.inputView = datePicker
+        dateTextField.inputAccessoryView = toolbar
+        
+    }
+    
     let containerView = UIView(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15))
-    let dateView = UIView(backgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0))
+    let dateView: UIStackView = {
+        let sv = UIStackView()
+        sv.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        sv.axis = .vertical
+        sv.distribution = .fillEqually
+        sv.contentMode = .center
+        return sv
+    }()
     let moodView = UIView(backgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0))
     let leftContainerView = UIView(backgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0))
     let rightContainerView = UIView(backgroundColor: #colorLiteral(red: 0.9305578581, green: 0.9305578581, blue: 0.9305578581, alpha: 0.5))
     
-    let dayLabel = UILabel(text: "12", textColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), font: .boldSystemFont(ofSize: 28))
-    let monthLabel = UILabel(text: "APR", textColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), font: .systemFont(ofSize: 12))
+    let icon = UIImageView()
     let titleLabel = UILabel(text: "Lorem Ipsum", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), font: .boldSystemFont(ofSize: 16))
     let bodyLabel = UILabel(text: "Lorem Ipsum", textColor: #colorLiteral(red: 0.322783404, green: 0.3480841599, blue: 0.3830818966, alpha: 1), font: .systemFont(ofSize: 12), numberOfLines: 0)
-    let quoteLabel = UILabel(text: "\"", textColor: #colorLiteral(red: 0.1843843587, green: 0.1982275739, blue: 0.2196825265, alpha: 1), font: .boldSystemFont(ofSize: 32))
+    let quoteLabel = UILabel(text: "\''", textColor: #colorLiteral(red: 0.1843843587, green: 0.1982275739, blue: 0.2196825265, alpha: 1), font: .boldSystemFont(ofSize: 32))
+    
+    let datePicker: UIDatePicker = {
+      let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        return picker
+    }()
+    
+    let dateTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "05/09/22"
+        return tf
+    }()
 }
