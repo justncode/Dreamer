@@ -18,6 +18,11 @@ class EntryStore {
     }
     
     func update(_ entry: Entry, for date: (day: Int, month: Int, year: Int)) {
+        guard
+            Date().year-date.year < years.count,
+            Int(date.month) < years[Date().year-date.year].months.count,
+            Int(date.day) < years[Date().year-date.year].months[Int(date.month)].days.count
+        else {return}
         years[Date().year-date.year].months[Int(date.month)].days[Int(date.day)] = entry
     }
     
