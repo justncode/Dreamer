@@ -42,9 +42,12 @@
 		C600F68B284C2FD200B046ED /* GearsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C600F68A284C2FD200B046ED /* GearsMenuViewController.swift */; };
 		C614FCF9284D16310042D227 /* JNCPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FCF8284D16310042D227 /* JNCPresentationController.swift */; };
 		C614FCFC284D42FB0042D227 /* UIImageView+justncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FCFB284D42FB0042D227 /* UIImageView+justncode.swift */; };
-		C614FCFE284D43BE0042D227 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FCFD284D43BE0042D227 /* Common.swift */; };
 		C614FD00284D44670042D227 /* IconedStyledCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FCFF284D44670042D227 /* IconedStyledCard.swift */; };
 		C614FD02284D46CB0042D227 /* NavigatorCardTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FD01284D46CB0042D227 /* NavigatorCardTableViewViewModel.swift */; };
+		C614FD04284D7C9A0042D227 /* TagSuggestionBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614FD03284D7C9A0042D227 /* TagSuggestionBrowser.swift */; };
+		C685C31A284EEC97001B042E /* TagSuggestionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685C319284EEC97001B042E /* TagSuggestionPageView.swift */; };
+		C685C31D284F8475001B042E /* DreamSubstrings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C685C31B284F8475001B042E /* DreamSubstrings.xcdatamodeld */; };
+		C685C31F284F87B4001B042E /* DeterminantLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685C31E284F87B4001B042E /* DeterminantLoader.swift */; };
 		C6C27ED9284BBD3B00A6F4C9 /* MonthCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C27ED8284BBD3B00A6F4C9 /* MonthCategoriesViewModel.swift */; };
 		C6C27EDC284BBDFE00A6F4C9 /* DreamTextAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C27EDB284BBDFE00A6F4C9 /* DreamTextAI.swift */; };
 /* End PBXBuildFile section */
@@ -87,9 +90,12 @@
 		C600F68A284C2FD200B046ED /* GearsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearsMenuViewController.swift; sourceTree = "<group>"; };
 		C614FCF8284D16310042D227 /* JNCPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNCPresentationController.swift; sourceTree = "<group>"; };
 		C614FCFB284D42FB0042D227 /* UIImageView+justncode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+justncode.swift"; sourceTree = "<group>"; };
-		C614FCFD284D43BE0042D227 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C614FCFF284D44670042D227 /* IconedStyledCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconedStyledCard.swift; sourceTree = "<group>"; };
 		C614FD01284D46CB0042D227 /* NavigatorCardTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorCardTableViewViewModel.swift; sourceTree = "<group>"; };
+		C614FD03284D7C9A0042D227 /* TagSuggestionBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSuggestionBrowser.swift; sourceTree = "<group>"; };
+		C685C319284EEC97001B042E /* TagSuggestionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSuggestionPageView.swift; sourceTree = "<group>"; };
+		C685C31C284F8475001B042E /* DreamSubstrings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamSubstrings.xcdatamodel; sourceTree = "<group>"; };
+		C685C31E284F87B4001B042E /* DeterminantLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminantLoader.swift; sourceTree = "<group>"; };
 		C6C27ED8284BBD3B00A6F4C9 /* MonthCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCategoriesViewModel.swift; sourceTree = "<group>"; };
 		C6C27EDB284BBDFE00A6F4C9 /* DreamTextAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTextAI.swift; sourceTree = "<group>"; };
 		C6C27EDD284BBEEE00A6F4C9 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 		7633C2D220A51D0500282E6E /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				C600F68A284C2FD200B046ED /* GearsMenuViewController.swift */,
 				7633C2D320A51D1F00282E6E /* NavigationAnimator.swift */,
 				C614FCF8284D16310042D227 /* JNCPresentationController.swift */,
 			);
@@ -157,7 +164,7 @@
 			children = (
 				C614FCFF284D44670042D227 /* IconedStyledCard.swift */,
 				7633C2DB20A5210900282E6E /* Gradient.swift */,
-				C614FCFD284D43BE0042D227 /* Common.swift */,
+				C685C31E284F87B4001B042E /* DeterminantLoader.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 		C6C27ED5284BBCC600A6F4C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C614FD01284D46CB0042D227 /* NavigatorCardTableViewViewModel.swift */,
 				C6C27ED8284BBD3B00A6F4C9 /* MonthCategoriesViewModel.swift */,
 			);
 			path = ViewModel;
@@ -351,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				C6C27EDB284BBDFE00A6F4C9 /* DreamTextAI.swift */,
+				C685C31B284F8475001B042E /* DreamSubstrings.xcdatamodeld */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -358,8 +367,7 @@
 		C6C27ED7284BBCFA00A6F4C9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C600F68A284C2FD200B046ED /* GearsMenuViewController.swift */,
-				C614FD01284D46CB0042D227 /* NavigatorCardTableViewViewModel.swift */,
+				C614FD03284D7C9A0042D227 /* TagSuggestionBrowser.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 		C6C27EDA284BBD8600A6F4C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C685C319284EEC97001B042E /* TagSuggestionPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 				765A459A20A3997A0082FB7A /* Date+Components.swift in Sources */,
 				C614FCFC284D42FB0042D227 /* UIImageView+justncode.swift in Sources */,
 				C6C27EDC284BBDFE00A6F4C9 /* DreamTextAI.swift in Sources */,
+				C685C31A284EEC97001B042E /* TagSuggestionPageView.swift in Sources */,
 				7633C31D20A62D7800282E6E /* Alert.swift in Sources */,
 				C600F68B284C2FD200B046ED /* GearsMenuViewController.swift in Sources */,
 				C614FD00284D44670042D227 /* IconedStyledCard.swift in Sources */,
@@ -461,6 +471,8 @@
 				7633C2D720A5205A00282E6E /* WeekdayView.swift in Sources */,
 				765A459F20A39FCB0082FB7A /* Month.swift in Sources */,
 				765A459D20A39FBD0082FB7A /* Weekday.swift in Sources */,
+				C685C31F284F87B4001B042E /* DeterminantLoader.swift in Sources */,
+				C685C31D284F8475001B042E /* DreamSubstrings.xcdatamodeld in Sources */,
 				765A45BF20A3BE030082FB7A /* DreamerModels.xcdatamodeld in Sources */,
 				7633C32220A62E9400282E6E /* DotView.swift in Sources */,
 				765A45C120A3BE880082FB7A /* CoreDataManager.swift in Sources */,
@@ -473,12 +485,12 @@
 				765A457720A38E2D0082FB7A /* AppDelegate.swift in Sources */,
 				7633C2CF20A51B8000282E6E /* UIView+Initialization.swift in Sources */,
 				7633C2D120A51B9D00282E6E /* UIView+Style.swift in Sources */,
+				C614FD04284D7C9A0042D227 /* TagSuggestionBrowser.swift in Sources */,
 				7633C2BD20A5183D00282E6E /* EntryStore.swift in Sources */,
 				7633C2C420A51A6000282E6E /* CalendarCells.swift in Sources */,
 				7633C2D420A51D1F00282E6E /* NavigationAnimator.swift in Sources */,
 				765A45BB20A3BD990082FB7A /* UIView+Anchors.swift in Sources */,
 				765A45A120A39FFA0082FB7A /* Year.swift in Sources */,
-				C614FCFE284D43BE0042D227 /* Common.swift in Sources */,
 				765A458B20A38F290082FB7A /* CalendarsController.swift in Sources */,
 				7633C2DC20A5210900282E6E /* Gradient.swift in Sources */,
 			);
@@ -616,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3463GQXGTB;
 				INFOPLIST_FILE = "$(SRCROOT)/Dreamer/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justncode.Dreamer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3G7JW8J942;
 				INFOPLIST_FILE = "$(SRCROOT)/Dreamer/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justncode.Dreamer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,6 +684,16 @@
 			);
 			currentVersion = 765A45BE20A3BE030082FB7A /* DreamerModels.xcdatamodel */;
 			path = DreamerModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C685C31B284F8475001B042E /* DreamSubstrings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C685C31C284F8475001B042E /* DreamSubstrings.xcdatamodel */,
+			);
+			currentVersion = C685C31C284F8475001B042E /* DreamSubstrings.xcdatamodel */;
+			path = DreamSubstrings.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

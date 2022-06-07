@@ -21,6 +21,7 @@ class GearsMenuViewController: UIViewController {
     
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
+    var delegate: UINavigationController?
     public var backdrop: CAGradientLayer = {
 
         let gradientLayer = CAGradientLayer()
@@ -72,11 +73,22 @@ class GearsMenuViewController: UIViewController {
         
         view.addSubview(hstack)
         NSLayoutConstraint.activate([
-            hstack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hstack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hstack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.layoutMargins.left),
             hstack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             hstack.heightAnchor.constraint(equalToConstant: 350)
         ])
+        #if targetEnvironment(macCatalyst)
+            hstack.widthAnchor.constraint(equalToConstant: CGFloat(UIScreen.main.bounds.width*2.0/3.0)).isActive = true
+            hstack.widthAnchor.constraint(equalToConstant: CGFloat(UIScreen.main.bounds.width*2.0/3.0)).isActive = true
+            hstack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        #else
+            if UIDevice.current.model == "iPad" {
+                hstack.widthAnchor.constraint(equalToConstant: CGFloat(UIScreen.main.bounds.width*2.0/3.0)).isActive = true
+//                hstack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+              }else{
+                  hstack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+              }
+        #endif
         
         addTableForm(superView: hstack)
     }
@@ -99,17 +111,8 @@ class GearsMenuViewController: UIViewController {
         let item = actionIcons[target.tag]
         item.action?(Date())
     }
-    
-    @IBAction private func showCalenderDateEntry() {
-        let datePickerValue = Date()
-        showEntry?(datePickerValue.day-1, datePickerValue.month, datePickerValue.year)
-    }
-    
-    @IBAction private func showDailyEntry() {
-       
-    }
 
-    @IBAction func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
+    @IBAction private func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         guard let pointOrigin = pointOrigin else {
             return
         }
@@ -138,9 +141,7 @@ class GearsMenuViewController: UIViewController {
 
 
 extension GearsMenuViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return indexPath.row == 1 ? nil : indexPath
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             case 0:
@@ -150,9 +151,10 @@ extension GearsMenuViewController: UITableViewDelegate {
                 guard let cell = tableView.cellForRow(at: indexPath) as? IconedStyledCard else {return}
                 let today = cell.datePicker.date
                 showEntry?(today.day-1, today.month, today.year)
-                self.dismiss(animated: true)
+                self.dismiss(animated: true) // have to dismiss calendar picker lol then dismiss popover sheet
             default:
-                break
+            let vc = TagSuggestionBrowser()
+            delegate?.pushViewController(vc, animated: true)
         }
         self.dismiss(animated: true)
     }

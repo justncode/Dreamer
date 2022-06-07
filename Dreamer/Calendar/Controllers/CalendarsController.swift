@@ -62,13 +62,13 @@ class CalendarsController: UIViewController {
             CalenderGearsGroupItem(title: "Update Past/Future", icon: UIImage(systemName: "calendar.day.timeline.leading")!),
             CalenderGearsGroupItem(title: "Organize Dots on Calender", icon: UIImage(systemName: "mappin")!)
         ])
+        vc.delegate = self.navigationController
         vc.showEntry = { [weak self] (day, month, year) in
             guard let self = self else {return}
             self.showEntry(for: day, month: month, year: year)
         }
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = self
-//        navigationController?.pushViewController(vc, animated: true)
         self.present(vc, animated: true,completion: nil)
 
     }

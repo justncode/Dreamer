@@ -64,13 +64,13 @@ class IconedStyledCard: UITableViewCell {
         dateView.addArrangedSubview(icon)
         
         leftContainerView.addSubview(dateView)
+        dateView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            dateView.topAnchor.constraint(equalTo: leftContainerView.topAnchor, constant: 15),
-            dateView.bottomAnchor.constraint(equalTo: leftContainerView.bottomAnchor, constant: -15),
-            dateView.trailingAnchor.constraint(equalTo: leftContainerView.trailingAnchor, constant: -15),
-            dateView.leadingAnchor.constraint(equalTo: leftContainerView.leadingAnchor, constant: 15)
+            dateView.topAnchor.constraint(equalTo: leftContainerView.topAnchor, constant: 10),
+            dateView.bottomAnchor.constraint(equalTo: leftContainerView.bottomAnchor, constant: -10),
+            dateView.trailingAnchor.constraint(equalTo: leftContainerView.trailingAnchor, constant: -10),
+            dateView.leadingAnchor.constraint(equalTo: leftContainerView.leadingAnchor, constant: 10)
             ])
-        dateView.anchor(top: leftContainerView.topAnchor, leading: leftContainerView.leadingAnchor, bottom: leftContainerView.bottomAnchor, trailing: leftContainerView.trailingAnchor)
         
         containerView.addSubview(rightContainerView)
         rightContainerView.anchor(top: containerView.topAnchor, leading: leftContainerView.trailingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor)
@@ -98,16 +98,6 @@ class IconedStyledCard: UITableViewCell {
     private func setupCell() {
         selectionStyle = .none
         backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-    }
-    
-    private func createDatePicker() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let donebttn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
-        dateTextField.inputView = datePicker
-        dateTextField.inputAccessoryView = toolbar
-        
     }
     
     let containerView = UIView(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15))
